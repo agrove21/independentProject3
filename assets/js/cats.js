@@ -28,12 +28,12 @@ function getBreedById(id) {
     });
 }
 
-function showModalData (data) {
-  document.querySelector('.modal-card-title').innerHTML = data.name
-  const modalBody =document.querySelector('.modal-card-body') 
-  const image =`<img src="https://cdn2.thecatapi.com/images/${data.reference_image_id}.jpg"/>`
-  const descript =`<p><strong>Description:</strong> ${data.description}</p>`
-  modalBody.innerHTML = image + descript
+function showModalData(data) {
+  document.querySelector(".modal-card-title").innerHTML = data.name;
+  const modalBody = document.querySelector(".modal-card-body");
+  const image = `<img src="https://cdn2.thecatapi.com/images/${data.reference_image_id}.jpg"/>`;
+  const descript = `<p><strong>Description:</strong> ${data.description}</p>`;
+  modalBody.innerHTML = image + descript;
 }
 
 function showBreeds(breeds) {
@@ -46,7 +46,7 @@ function showBreeds(breeds) {
 
   document.querySelectorAll(".breeds-container button").forEach(function (btn) {
     btn.addEventListener("click", function (event) {
-      getBreedById(event.target.id)
+      getBreedById(event.target.id);
       toggleModal();
     });
   });
