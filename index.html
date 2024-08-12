@@ -7,7 +7,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Furry Friend Finder</title>
   </head>
@@ -24,18 +27,30 @@
       </p>
       <h2 class="has-text-weight-bold has-text-centered">Select a Pet:</h2>
       <section class="pet-btns">
-        <a href="catbreeds.html"><i class="fa-solid fa-cat"> Cat</i></a>
-        <a href="dogbreeds.html"><i class="fa-solid fa-dog"> Dog</i></a>
+        <a href="catbreeds.html"
+          ><i class="fa-solid fa-cat"></i>
+          <span class="is-size-4">Cat</span>
+        </a>
+        <a href="dogbreeds.html"
+          ><i class="fa-solid fa-dog"></i>
+          <span class="is-size-4">Dog</span>
+        </a>
       </section>
 
-      <h2 class="has-text-weight-bold has-text-centered">My Favorite Pet Breeds:</h2>
+      <h2 class="has-text-weight-bold has-text-centered">
+        My Favorite Pet Breeds:
+      </h2>
       <section class="breeds-container"></section>
 
       <div class="modal" id="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
-            <button class="favorite">Remove Favorite</button>
+            <button class="favorite">
+              <span class="icon red">
+                <i class="fa-regular fa-heart"></i>
+              </span>
+            </button>
             <p class="modal-card-title"></p>
             <button class="delete" aria-label="close"></button>
           </header>

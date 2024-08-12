@@ -1,37 +1,64 @@
-header, footer {
-    text-align:center;
-    /* background-color: purple;
+header,
+footer {
+  text-align: center;
+  /* background-color: purple;
     color: whitesmoke; */
-    padding: 1em;
-  }
-  
-  main {
-    padding: 2em;
-  }
-  
- .pet-btns {
-  width: fit-content;
+  padding: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  padding: 2em;
+}
+
+.pet-btns {
+  display: flex;
   margin-top: 1em;
   margin-bottom: 4em;
- }
+  gap: 2rem;
+  justify-content: center;
+}
 
- .pet-btns a {
+.pet-btns a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   background-color: purple;
   color: whitesmoke;
   font-size: 4rem;
   padding: 10px 30px;
- }
+}
 
- .breeds-container {
+.hide {
+  display: none;
+}
+
+.breeds-container {
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
   gap: 2rem;
   align-items: center;
   justify-content: center;
- }
+}
 
- .breeds-container button {
+.breeds-container button {
   padding: 20px 60px;
- }
+}
+
+.red {
+  color: tomato;
+}
+
+.breed-item {
+  display: flex;
+}
+
+.breed-item img {
+  width: 75px;
+}

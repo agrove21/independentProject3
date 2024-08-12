@@ -18,17 +18,19 @@
   <body>
     <header>
       <h1>Cat Breeds</h1>
-      <a href="index.html">
-        <span class="icon">
-          <i class="fa-solid fa-house"></i>
-        </span>
-        Home</a
-      >
-      <a href="index.html#breeds-container">
-        <span class="icon">
-          <i class="fa-solid fa-heart"></i>
-        </span>
-        Favorite Breeds</a
+      <span>
+        <a href="index.html">
+          <span class="icon">
+            <i class="fa-solid fa-house"></i>
+          </span>
+          Home</a
+        >
+        <a href="index.html#breeds-container">
+          <span class="icon">
+            <i class="fa-solid fa-heart"></i>
+          </span>
+          Favorite Breeds</a
+        ></span
       >
     </header>
     <section class="breeds-container"></section>
@@ -37,7 +39,11 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <button class="favorite">Favorite</button>
+          <button class="favorite">
+            <span class="icon">
+              <i class="fa-regular fa-heart"></i>
+            </span>
+          </button>
           <p class="modal-card-title"></p>
           <button class="delete" aria-label="close"></button>
         </header>

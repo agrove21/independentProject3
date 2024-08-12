@@ -39,5 +39,4 @@ function showModalData(data) {
   modalBody.innerHTML = image + lifeSpan + weight + temperament;
 }
 
-
 window.onload = fetchDogBreeds;
