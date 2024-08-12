@@ -1,5 +1,5 @@
 header, footer {
-    text-align: center;
+    text-align:center;
     background-color: #f8f8f8;
     padding: 1em;
   }
@@ -10,16 +10,18 @@ header, footer {
   
  .pet-btns {
   width: fit-content;
-  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 4em;
  }
 
  .pet-btns a {
   text-decoration: none;
-  background-color: dodgerblue;
-  color: #f8f8f8;
+  background-color: purple;
+  color: whitesmoke;
   font-size: 4rem;
   padding: 10px 30px;
  }
+
  .breeds-container {
   display: flex;
   flex-wrap: wrap;

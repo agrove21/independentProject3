@@ -1,50 +1,24 @@
-const catBaseUrl = "https://api.thecatapi.com/v1";
-const dogBaseUrl = "https://api.thedogapi.com/v1"
-const catApiKey =
-  "live_XIJ61rTGzrcgWLwQRMEqokr5qx6iJrORl2zr9k4374qNbDbba5pF1f37eXHGQQ1h";
-const dogApiKey =
-  "live_UOjfU5yMJMSn0iNtFAJfiutWXY0Py1pJqDJt6oEWwwtMUplQstSsRv3KcHWQ5k9E";
+const favoritePets = getFavoritePetsFromStorage();
+console.log(favoritePets);
+showBreeds(favoritePets);
 
-document
-  .getElementById("select-pet")
-  .addEventListener("change", function (event) {
-    console.log(event.target.value);
-    if (event.target.value === "cat") {
-      fetchCatBreeds();
-    } else if (event.target.value === "dog") {
-      fetchDogBreeds();
-    }
-  });
-function fetchCatBreeds() {
-  fetch(`${catBaseUrl}/breeds`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      showBreeds(data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-function fetchDogBreeds() {
-  fetch(`${dogBaseUrl}/breeds`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      showBreeds(data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+function getBreedById(id) {
+  const petData = favoritePets.find((pet) => pet.id == id);
+  showModalData(petData);
+  selectedPet = petData;
 }
 
-function showBreeds(breeds) {
-  const breedsDropdown = document.getElementById("select-breed");
-  let options = '<option value="">Select Breed</option>';
-  for (const breed of breeds) {
-    options += `<option value="">${breed.name}</option>`;
+function showModalData(data) {
+  document.querySelector(".modal-card-title").innerHTML = data.name;
+  const modalBody = document.querySelector(".modal-card-body");
+  let image = "";
+  if (typeof data.id == "string") {
+    image = `<img src="https://cdn2.thecatapi.com/images/${data.reference_image_id}.jpg"/>`;
+  } else {
+    image = `<img src="https://cdn2.thedogapi.com/images/${data.reference_image_id}.jpg"/>`;
   }
-  breedsDropdown.innerHTML = options;
+  const lifeSpan = `<h3> <strong>Life Span:</strong> ${data.life_span}</h3>`;
+  const weight = `<h3> <strong>Weight:</strong> ${data.weight.imperial} lbs.</h3>`;
+  const temperament = `<h3> <strong>Temperament:</strong> ${data.temperament}</h3>`;
+  modalBody.innerHTML = image + lifeSpan + weight + temperament;
 }
